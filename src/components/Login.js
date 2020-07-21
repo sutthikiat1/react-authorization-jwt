@@ -68,12 +68,13 @@ const Login = () => {
   const { login, auth } = useContext(AuthContext);
   const history = useHistory();
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
 
-  useEffect(() => { //Fix ตรงนี้ถ้าอยากำหนดหน้าเริ่มต้นหลังจาก Login 
+  useEffect(() => {
+    //Fix ตรงนี้ถ้าอยากำหนดหน้าเริ่มต้นหลังจาก Login
     if (auth && auth === "member") {
       history.push("/premium-courses");
     }
@@ -82,11 +83,10 @@ const Login = () => {
     }
   }, [auth, history]);
 
-
   return (
     <FormDiv>
       <form
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault();
           login(user.username, user.password);
           setUser({ username: "", password: "" });
