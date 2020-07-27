@@ -1,4 +1,4 @@
-## Example Infinite Scroll Gallery
+## Example Authorization With jwt
 
 Powerd by React Example Mutileple Role Authentication With Jwt
 
